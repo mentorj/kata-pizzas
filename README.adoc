@@ -1,0 +1,21 @@
+= Kata pizza
+:author:jerome moliere - jerome@javaxpert.com
+
+== Introduction
+
+Basic implementation for a pricing component for your online pizzas store
+Uses different patterns & technics mixed together:
+
+* design pattern decorator for pricing pizzas
+* design pattern proxy for pricing a whole  order with a rebate
+* an opiniatated functional implementation of the order pricing
+
+
+== Requirements
+Java 11 & Maven
+
+== Improvements
+TO BE DONE :
+
+* refactoring
+* clean useless println

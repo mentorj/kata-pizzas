@@ -15,7 +15,7 @@ import java.util.ArrayList;
  *  By default no discount means a 0 euros rebate discount
  * @author deadbrain
  */
-public class Order {
+public class Order implements Billable{
 
     private java.util.List<Tuple3<Product,Integer, Discount>> orderList;
 
@@ -28,7 +28,7 @@ public class Order {
      * using standard price per unit , then discounted with Coupon and multiplied by the quantity in  the order
      * @return
      */
-    public double computePrice(){
+    public double getPrice(){
 
         System.out.println("computePrice ,with an order of size ="+ orderList.size());
         List<Tuple3<Product,Integer,Discount>> immutableList = List.ofAll(orderList);
