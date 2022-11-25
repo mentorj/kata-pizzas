@@ -1,0 +1,40 @@
+# Kata Pizzas
+:author:jerome@javaxpert.com
+
+## Kata goal
+
+We want to setup basic billing system for an online  pizzas company.
+We 'll deal with orders ,where customers can buy :
+
+* drinks & icea creams
+* pizzas of course
+
+Pizzas have quite complex pricing rules because price is computed using :
+
+* size (from small to XL )
+* pate used ( default or crunchy or large)
+* ingredients used ( 3 allowed in standard, 1 euro more per extra choice)
+* cooking (calzone adds 2 euros upon standard price)
+
+### Coupons
+
+Billing system must enable customers to use different coupons:
+
+* per order entry : -15% usable on any ice cream or 2 euros rebate for Coca giant bottles
+* per order : -10% discount for a whole order or 5 EUROS rebate for an entire order
+
+
+## Solution proposal
+
+This is a veru basic partial solution:
+
+* working one but do not cover all required entities (Small & medium pizzas but no large/XL format)
+* decorator pattern used enables us to create stupid combos (Standard Pizza based on Large Pizzas) because of a lack of checks
+* design too technical and not enough domain oriented
+
+So different refactorings may be needed :
+
+* introduce a real OrderEntry entity
+* simplify reduce usage for computing the total for an order
+* unify discounts management
+* makes Pizza building more robust (add consistency checks)
