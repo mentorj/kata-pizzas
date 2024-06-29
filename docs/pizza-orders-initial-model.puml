@@ -1,0 +1,78 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title: Pizza UML model - starter
+enum Size{
+STD,
+LARGE,
+XXL
+}
+
+enum PastaType{
+  STD,
+  BACON,
+  CHEESE
+ }
+
+ enum ToppingsType{
+   SIMPLE,
+   GENEROUS,
+   LUXURY
+  }
+
+class Product {
+  - String name
+  - float basePrice
+}
+
+class Pizza{
+  - Size size
+  - PastaType pasta
+  - ToppingsType toppings
+}
+
+class Soda{
+}
+
+class IceCream{
+}
+
+class Order{
+  - Coupon discount
+  + float computeTotalPrice
+}
+
+class Coupon{
+  - String label
+}
+
+class OrderLine{
+  - int quantity
+  - Product product
+  - Coupon lienDiscount
+}
+
+class FixedAmountCoupon{
+  - float discountAmount
+}
+
+class FixedRateCOupon{
+  - float rateDiscount
+ }
+
+Order *-- OrderLine
+OrderLine -- Product
+OrderLine -- Coupon :lienDiscount
+
+Product <|-- Pizza
+Product <|-- IceCream
+Product <|-- Soda
+
+Pizza -- Size
+Pizza -- PastaType
+Pizza -- ToppingsType
+
+Coupon <|-- FixedAmountCoupon
+Coupon <|-- FixedRateCOupon
+
+@enduml
